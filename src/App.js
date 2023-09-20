@@ -1,3 +1,5 @@
+import React from 'react';
+import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import Home from './pages/Home';
@@ -7,7 +9,8 @@ import PremiumPage from './pages/PremiumPage';
 function App() {
   return (
     <div className="App">
-      <Router>
+      <h1>test</h1>
+      {/* <Router>
         <div className="content">
           <NavLink className="content"  exact activeClassName="active" to="/">Home</NavLink>
           <NavLink className="content" activeClassName="active" to="/about">About</NavLink>
@@ -18,7 +21,7 @@ function App() {
           <Route path="/about" element={<About />}></Route>
           <Route path="/premium" element={<PremiumPage />}></Route>
         </Routes>
-      </Router>
+      </Router> */}
 
     </div>
   );
