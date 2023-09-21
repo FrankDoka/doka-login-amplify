@@ -9,7 +9,7 @@ function App() {
       <Router>
         <div className="content">
           <NavLink className="content"  exact activeClassName="active" to="https://frankdoka.com/">Home</NavLink>
-          <NavLink className="content" activeClassName="active" to="/premium">Premium Content</NavLink>
+          <NavLink className="content" activeClassName="active" to="/premium">Restricted</NavLink>
         </div>
         <Routes>
           <Route path="/" element={<PremiumPage />}></Route>
