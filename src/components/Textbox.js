@@ -26,12 +26,13 @@ class MyComponent extends React.Component {
             
             // Get the JWT token from the user's session
             const session = user.signInUserSession;
-            const accessToken = session.accessToken.jwtToken;
+          //  const accessToken = session.accessToken.jwtToken;
+            let jwtToken = user.signInUserSession.idToken.jwtToken;
 
             // Send the text and user ID to your Lambda function
             const response = await API.post('TextToSpeechAPI', '/text', {
                 headers: {
-                    Authorization: `Bearer ${accessToken}`, // Include the token in the "Authorization" header
+                    Authorization: jwtToken, // Include the token in the "Authorization" header
                 },
                 body: {
                     text: textBoxValues,
