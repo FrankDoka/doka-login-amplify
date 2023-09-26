@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/text": {
+      "name": "/text",
+      "lambdaFunction": "createTextEntry",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

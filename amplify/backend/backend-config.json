@@ -1,4 +1,20 @@
 {
+  "api": {
+    "TextToSpeechAPI": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "createTextEntry"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
   "auth": {
     "amplfyreactappe1aba89b": {
       "customAuth": false,
@@ -23,6 +39,31 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "createTextEntry": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_createTextEntry_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "createTextEntry"
+        }
+      ]
+    },
+    "AMPLIFY_function_createTextEntry_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "createTextEntry"
+        }
+      ]
     }
   }
 }
