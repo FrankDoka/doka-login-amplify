@@ -19,7 +19,7 @@
       "function": {
         "createTextEntry": {
           "deploymentBucketName": "amplify-amplfyreactapp-dev-141622-deployment",
-          "s3Key": "amplify-builds/createTextEntry-44562b696b32476e4c67-build.zip"
+          "s3Key": "amplify-builds/createTextEntry-46415744303051365270-build.zip"
         }
       },
       "api": {
