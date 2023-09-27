@@ -4,7 +4,7 @@ import { API, Auth } from 'aws-amplify';
 class MyComponent extends React.Component {
     state = {
         textBoxes: [''], // to keep track of the text boxes
-        textBoxValues: {} // to keep track of the text box values
+        textBoxValues: [] // to keep track of the text box values as an array
     }
 
     handleInputChange = (e, index) => {
@@ -12,9 +12,10 @@ class MyComponent extends React.Component {
         textBoxValues[index] = e.target.value;
     
         this.setState({
-            textBoxValues: { ...textBoxValues }
+            textBoxValues: [...textBoxValues] // Use spread syntax to copy the array
         });
     }
+    
 
     handleSubmit = async () => {
         const { textBoxValues } = this.state;
@@ -35,7 +36,7 @@ class MyComponent extends React.Component {
                     Authorization: jwtToken, // Include the token in the "Authorization" header
                 },
                 body: {
-                    text: textBoxValues,
+                    text: textBoxValues.join(' '),
                     userId: userId, // Include the user ID in the request body
                 },
             });
