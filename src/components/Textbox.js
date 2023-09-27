@@ -8,12 +8,12 @@ class MyComponent extends React.Component {
     }
 
     handleInputChange = (e, index) => {
-        this.setState(prevState => ({
-            textBoxValues: {
-                ...prevState.textBoxValues,
-                [index]: e.target.value
-            }
-        }))
+        const { textBoxValues } = this.state;
+        textBoxValues[index] = e.target.value;
+    
+        this.setState({
+            textBoxValues: { ...textBoxValues }
+        });
     }
 
     handleSubmit = async () => {
