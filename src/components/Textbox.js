@@ -19,28 +19,30 @@ class MyComponent extends React.Component {
 
     handleSubmit = async () => {
         const { textBoxValues } = this.state;
-
+    
         try {
             // Get the authenticated user's identity
             const user = await Auth.currentAuthenticatedUser();
             const userId = user.attributes.sub; // Assuming 'sub' is the user ID attribute
-            
+    
+            // Join the text values into a single string
+            const text = textBoxValues.join(' ');
+    
             // Get the JWT token from the user's session
             const session = user.signInUserSession;
-          //  const accessToken = session.accessToken.jwtToken;
             let jwtToken = user.signInUserSession.idToken.jwtToken;
-
+    
             // Send the text and user ID to your Lambda function
             const response = await API.post('TextToSpeechAPI', '/text', {
                 headers: {
                     Authorization: jwtToken, // Include the token in the "Authorization" header
                 },
                 body: {
-                    text: textBoxValues.join(' '),
+                    text: text, // Use the joined text
                     userId: userId, // Include the user ID in the request body
                 },
             });
-
+    
             console.log('Data submitted:', response);
         } catch (error) {
             console.error('Error submitting data:', error);
