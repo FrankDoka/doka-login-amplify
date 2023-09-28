@@ -4,7 +4,7 @@ import MyComponent from '../components/Textbox';
 
 const TextToSpeech = () => {
     return (
-        <MyComponent />
+        <MyComponent />     
     );
 }
 
