@@ -95,7 +95,6 @@ const TextToSpeech2 = () => {
         <select id="voiceSelected" onChange={handleVoiceChange}>
         <option value="" selected disabled hidden>Choose here</option>
           <option value="Joanna">Joanna [English]</option>
-          <option value="Marlene">Marlene [German]</option>
           <option value="Maxim">Maxim [Russian]</option>
           <option value="Mizuki">Mizukie [Japanese]</option>
           <option value="Carla">Carla [Italian]</option>
