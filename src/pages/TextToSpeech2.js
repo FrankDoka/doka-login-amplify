@@ -10,12 +10,12 @@ const API_ENDPOINT_SEND = "https://bsc2utc2vj.execute-api.us-east-1.amazonaws.co
 const API_ENDPOINT_RESPONSE = "https://bsc2utc2vj.execute-api.us-east-1.amazonaws.com/dev/response";
 
 const TextToSpeech2 = () => {
-  const [selectedVoice, setSelectedVoice] = useState('');
+  const [selectedVoiceAndLanguage, setSelectedVoiceAndLanguage] = useState('');
   const [inputText, setInputText] = useState('');
   const [posts, setPosts] = useState([]);
 
   const handleVoiceChange = (event) => {
-    setSelectedVoice(event.target.value);
+    setSelectedVoiceAndLanguage(event.target.value);
   };
 
   const handleInputChange = (event) => {
@@ -30,10 +30,13 @@ const TextToSpeech2 = () => {
     const session = user.signInUserSession;
     let jwtToken = user.signInUserSession.idToken.jwtToken;
 
+    const [voice, language] = selectedVoiceAndLanguage.split(' [');
+
     const inputData = {
-        voice: selectedVoice,
+        voice,
         text: inputText,
-        userId : user.attributes.sub
+        userId : user.attributes.sub,
+        language: language.slice(0, -1)
       };
       
     $.ajax({
@@ -93,12 +96,12 @@ const TextToSpeech2 = () => {
       <label>
         Voice:
         <select id="voiceSelected" onChange={handleVoiceChange}>
-        <option value="" selected disabled hidden>Choose here</option>
-          <option value="Joanna">Joanna [English]</option>
-          <option value="Maxim">Maxim [Russian]</option>
-          <option value="Mizuki">Mizukie [Japanese]</option>
-          <option value="Carla">Carla [Italian]</option>
-          {/* Add more options as needed */}
+          <option value="" selected disabled hidden>Choose here</option>
+          <option value="Joanna [en]">Joanna [English]</option>
+          <option value="Maxim [ru]">Maxim [Russian]</option>
+          <option value="Mizuki [ja]">Mizuki [Japanese]</option>
+          <option value="Carla [it]">Carla [Italian]</option>
+    {/* Add more options as needed */}
         </select>
       </label>
 
