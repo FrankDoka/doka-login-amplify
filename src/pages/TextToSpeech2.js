@@ -103,7 +103,7 @@ const TextToSpeech2 = () => {
           <option value="Carla [it]">Carla [Italian]</option>
           <option value="Enrique [es]">Enrique [Spanish]</option>
           <option value="Mathieu [fr]">Mathieu [French]</option>
-          <option value="Cristiano [pt-PT]">Cristiano [Portuquese]</option>
+          <option value="Cristiano [pt-PT]">Cristiano [Portuguese]</option>
     {/* Add more options as needed */}
         </select>
       </label>
