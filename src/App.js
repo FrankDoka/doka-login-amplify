@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import PremiumPage from './pages/PremiumPage';
-import TextToSpeech from './pages/TextToSpeech';
 import TextToSpeech2 from './pages/TextToSpeech2';
 import { Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports';
@@ -15,13 +14,11 @@ function App() {
         <div className="content">
           <NavLink className="content"  exact activeClassName="active" to="https://frankdoka.com/">Home</NavLink>
           <NavLink className="content" activeClassName="active" to="/premium">Restricted</NavLink>
-          <NavLink className="content" activeClassName="active" to="/textspeech">Text To Speech</NavLink>
-          <NavLink className="content" activeClassName="active" to="/textspeech2">Text To Speech 2</NavLink>
+          <NavLink className="content" activeClassName="active" to="/textspeech2">Text To Speech</NavLink>
         </div>
         <Routes>
           <Route path="/" element={<PremiumPage />}></Route>
           <Route path="/premium" element={<PremiumPage />}></Route>
-          <Route path="/textspeech" element={<TextToSpeech />}></Route>
           <Route path="/textspeech2" element={<TextToSpeech2 />}></Route>
         </Routes>
       </Router>
