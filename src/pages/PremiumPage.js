@@ -6,7 +6,10 @@ const PremiumPage = () => {
         <Authenticator>
             {({ signOut }) => (
                 <div>
-                    <h3>You are authenticated! This is the restricted content page!</h3>
+                    <h1>You are authenticated! <br/><br/>
+                    Please click the "Text to Speech" link at the top to access the application</h1>
+                    <h2><br/>When you generate a post, copy the Post ID to the left of the "Convert to Speech" button and paste it into the bottom and hit "Search".</h2>
+                    <h2><br></br>You can play the conversation directly from the website or download it.<br/><br/></h2>
                     <button onClick={signOut}>Sign Out</button>
                 </div>
             )}
